@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <QuartzCore/CAAction.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface MyAction <CAAction> : NSObject
 - (void)runActionForKey:(NSString *)key object:(id)anObject arguments:(NSDictionary *)dict;
@@ -28,6 +28,8 @@ int main() {
     MyAction* myAction = [[MyAction alloc] init];
     [myAction runActionForKey:@"helloworld" object:@"helloworld" arguments:@{@"hello": @"world"}];
     RELEASE(myAction);
+    CAAnimation* myAnimation = [[CAAnimation alloc] init];
+    RELEASE(myAnimation);
     // FakeAction* fakeAction = [[FakeAction alloc] init];
     // [fakeAction runActionForKey:@"helloworld" object:@"helloworld" arguments:@{@"hello": @"world"}];
     // RELEASE(fakeAction);
